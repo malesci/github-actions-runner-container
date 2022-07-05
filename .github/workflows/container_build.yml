@@ -8,7 +8,7 @@ on:
       runner_version:
         description: 'Runner version'
         required: true
-        default: '2.287.1'
+        default: '2.294.0'
 
 jobs:
   build:
