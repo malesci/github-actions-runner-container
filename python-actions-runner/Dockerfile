@@ -5,7 +5,7 @@ FROM python:$VERSION
 # You would typically obtain this latest version from an API endpoint and use that for the runner version
 # as the runner will self update to the latest version when it gets its first job.
 # The reason this is specified is so that we can test the upgrade scenarios using this Dockerfile.
-ARG GH_RUNNER_VERSION=2.294.0
+ARG GH_RUNNER_VERSION=2.296.1
 
 ARG COMMIT_SHA=main
 ARG CREATED=""
