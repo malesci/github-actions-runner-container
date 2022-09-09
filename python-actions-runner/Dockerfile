@@ -52,7 +52,7 @@ RUN set -ex \
     && unzip /chromedriver/chromedriver* -d /usr/local/bin/
 
 # Install Azure CLI (instructions taken from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash \
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash \
     && echo "azure-cli https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt" >> apt-sources.txt \
     && rm -f /etc/apt/sources.list.d/azure-cli.list \
     && rm -f /etc/apt/sources.list.d/azure-cli.list.save
