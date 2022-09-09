@@ -50,7 +50,13 @@ RUN set -ex \
     && CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION") \
     && wget -q --continue -P /chromedriver "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" \
     && unzip /chromedriver/chromedriver* -d /usr/local/bin/
-   
+
+# Install Azure CLI (instructions taken from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash \
+    && echo "azure-cli https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt" >> apt-sources.txt \
+    && rm -f /etc/apt/sources.list.d/azure-cli.list \
+    && rm -f /etc/apt/sources.list.d/azure-cli.list.save
+
 # Set display port as an environment variable
 ENV DISPLAY=:99
 
