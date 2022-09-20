@@ -57,6 +57,10 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash \
     && rm -f /etc/apt/sources.list.d/azure-cli.list \
     && rm -f /etc/apt/sources.list.d/azure-cli.list.save
 
+# Install additional Python requirements
+COPY python-actions-runner/requirements.txt .
+RUN pip install -r ./requirements.txt
+
 # Set display port as an environment variable
 ENV DISPLAY=:99
 
